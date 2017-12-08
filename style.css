@@ -1,0 +1,234 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Fonts import */
+@font-face {
+  font-family: 'DinCompPro';
+  src: url('fonts/PFDinTextCompPro-Regular.eot');
+  src: url('fonts/PFDinTextCompPro-Regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PFDinTextCompPro-Regular.woff2') format('woff2'),
+       url('fonts/PFDinTextCompPro-Regular.woff') format('woff'),
+       url('fonts/PFDinTextCompPro-Regular.ttf') format('truetype'),
+       url('fonts/PFDinTextCompPro-Regular.svg#PFDinTextCompPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCompPro-Med';
+  src: url('fonts/PFDinTextCompPro-Medium.eot');
+  src: url('fonts/PFDinTextCompPro-Medium.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PFDinTextCompPro-Medium.woff2') format('woff2'),
+       url('fonts/PFDinTextCompPro-Medium.woff') format('woff'),
+       url('fonts/PFDinTextCompPro-Medium.ttf') format('truetype'),
+       url('fonts/PFDinTextCompPro-Medium.svg#PFDinTextCompPro-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DinCompPro-Med';
+  src: url('fonts/PFDinTextCompPro-MediumItalic.eot');
+  src: url('fonts/PFDinTextCompPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PFDinTextCompPro-MediumItalic.woff2') format('woff2'),
+       url('fonts/PFDinTextCompPro-MediumItalic.woff') format('woff'),
+       url('fonts/PFDinTextCompPro-MediumItalic.ttf') format('truetype'),
+       url('fonts/PFDinTextCompPro-MediumItalic.svg#PFDinTextCompPro-MediumItalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DinCompPro';
+  src: url('fonts/PFDinTextCompPro-Italic.eot');
+  src: url('fonts/PFDinTextCompPro-Italic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/PFDinTextCompPro-Italic.woff2') format('woff2'),
+       url('fonts/PFDinTextCompPro-Italic.woff') format('woff'),
+       url('fonts/PFDinTextCompPro-Italic.ttf') format('truetype'),
+       url('fonts/PFDinTextCompPro-Italic.svg#PFDinTextCompPro') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
+/* Unique styles */
+body {
+	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+}
+a {
+	text-decoration: none;
+	color: #fdd900;
+}
+
+a:hover {
+	color: #fff;
+	text-shadow: 0 0 1px #fff;
+}
+
+.wrapper {
+	width: 1200px;
+	margin: auto;
+	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	/* border-left: 5px dotted #ff0000; */
+	/* border-right: 5px dotted #ff0000; */
+}
+
+header {
+	height: 300px;
+	background-image: url("images/design/up.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+header > * {
+	display: inline-block;
+	position: relative;
+}
+.videos {
+	top: 20px;
+	left: 20px;
+	float: left;
+	width: 290px;
+	height: 250px;
+	font-family: "DinCompPro-Med";
+	font-size: 23px;
+	overflow: hidden;
+}
+.videos > div {
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 0 1px #fff;
+	margin-left: 50px;
+}
+.category {
+	display: inline-block;
+	width: 50px;
+	color: #fdd900;
+}
+.videos .name {
+	display: inline-block;
+	width: 230px;
+	color: #fdd900;
+	text-align: center;
+}
+.logo {
+	width: 400px;
+	top: 80px;
+	left: 100px;
+	right: 100px;
+}
+.timetable {
+	top: 20px;
+	right: 20px;
+	float: right;
+	width: 290px;
+	height: 250px;
+	font-family: "DinCompPro-Med";
+	font-size: 23px;
+	overflow: hidden;
+}
+.timetable > div {
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 0 2px #000;
+	margin-left: 50px;
+}
+.time {
+	display: inline-block;
+	width: 50px;
+	color: #000;
+}
+.timetable .name {
+	display: inline-block;
+	width: 230px;
+	color: #000;
+	text-align: center;
+}
+nav {
+	height: 50px;
+	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background-repeat: no-repeat;
+	background-position: 85px;
+}
+.nav_li {
+	display: inline;
+	margin-right: 20px;
+}
+.navBtn {
+	font-family: "DinCompPro-Med";
+	font-size: 32px;
+}
+main {
+	min-height: 300px;
+	overflow: hidden;
+	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background-repeat: no-repeat;
+	background-position: 85px;
+}
+.player, .player > iframe {
+	display: inline-block;
+	float: left;
+	width: 685px;
+	height: 385px;
+}
+.chat, .chat > iframe {
+	display: inline-block;
+	float: right;
+	width: 515px;	
+	height: 385px;
+}
+footer {
+	height: 300px;
+	background-image: url("images/design/down.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.copy {
+	position: relative;
+	top: 5px;
+	right: 5px;
+	display: inline-block;
+	float: right;
+	font-family: "DinCompPro-Med";
+	font-size: 20px;
+}
