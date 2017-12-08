@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1240">
+	{% load staticfiles %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'sls_main/images/design/favicon.png' %}"/>
+	<link rel="stylesheet" href="{% static 'sls_main/style.css' %}">
+	<title>СЛС | {{title}}</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div class="videos">
+				<div>Смотрите на YouTube:</div>
+				<ul>
+				{% for video in lastvideos %}
+					<li>
+						<div class="category">{{ video.program }}</div>
+						<div class="name"><a target="_blank" href="{{ video.link }}">{{ video.name }}</a></div>
+					</li>
+				{% endfor %}
+
+				{% for video in videos %}
+					<li>
+						<div class="category">{{ video.program }}</div>
+						<div class="name"><a target="_blank" href="{{ video.link }}">{{ video.name }}</a></div>
+					</li>
+				{% endfor %}	
+				</ul>
+			</div>
+			<img src="{% static 'sls_main/images/design/logo.png' %}" class="logo" alt="СЛС">
+			<div class="timetable">
+				<!--
+				<div>Программа передач {{ date }}</div>
+				<ul>
+				{% for tte in ttes %}
+					<li>
+						<div class="time">{{ tte.time }}</div>
+						<div class="name">{{ tte.program }}</div>
+					</li>
+				{% endfor %}
+				</ul>
+				-->
+			</div>
+		</header>
+		<nav>
+			<ul>
+				<li class="nav_li"><a href="/" class="navBtn">Главная</a></li>
+				<li class="nav_li"><a href="/projects" class="navBtn">Проекты</a></li>
+				<li class="nav_li"><a href="/employees" class="navBtn">Сотрудники</a></li>
+				<li class="nav_li"><a href="/about" class="navBtn">О Нас</a></li>
+			</ul>
+		</nav>
+		<main>
+		{% block content %}
+			<p>Пусто</p>
+		{% endblock content %}
+		</main>
+		<footer>
+			<div class="partners">
+				<!-- {% block partners %}
+					{% for i,v in partners %}
+						<div class="partner">{{ partner }}</div>
+					{% endfor %}
+				{% endblock partners %} -->
+			</div>
+			<div class="copy">СЛС &copy; 2013-{% now "Y" %}</div>
+		</footer>
+	</div>
+</body>
+</html>

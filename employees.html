@@ -1,0 +1,28 @@
+{% extends "sls_main/base.html" %}
+{% load staticfiles %}
+{% block content %}
+	<div class="content">
+	<ul>	
+	{% for employee in employees %}
+	<li class="employees">
+		<div class="text">
+			<p style="text-align: right;">{{ employee.first_name }} {{ employee.last_name }}</p>
+			<p style="text-align: right;">{{ employee.functions|linebreaksbr }}</p>
+			{# {{ employee.functions|linebreaks }} #}
+		</div>
+		<div class="media">
+			<img src=
+			'
+				{% if employee.photo %}
+					{{ employee.photo.url }}
+				{% else %}
+					{% static "sls_main/images/placeholders/photo.png" %}
+				{% endif %}
+			'
+			alt="{{ employee.first_name }} {{ employee.last_name }}" >
+		</div>
+	</li>
+	{% endfor %}
+	</ul>
+	</div>
+{% endblock content %}
