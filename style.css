@@ -109,7 +109,7 @@ a:hover {
 .wrapper {
 	width: 1200px;
 	margin: auto;
-	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background: linear-gradient(to left, #b31410 50%,#000000 50%);
 	/* border-left: 5px dotted #ff0000; */
 	/* border-right: 5px dotted #ff0000; */
 }
@@ -143,7 +143,7 @@ header > * {
 .category {
 	display: inline-block;
 	width: 50px;
-	color: #fdd900;
+	color: #b31410;
 }
 .videos .name {
 	display: inline-block;
@@ -186,7 +186,7 @@ header > * {
 }
 nav {
 	height: 50px;
-	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background: linear-gradient(to left, #b31410 50%,#000000 50%);
 	background-repeat: no-repeat;
 	background-position: 85px;
 }
@@ -201,7 +201,7 @@ nav {
 main {
 	min-height: 300px;
 	overflow: hidden;
-	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background: linear-gradient(to left, #b31410 50%,#000000 50%);
 	background-repeat: no-repeat;
 	background-position: 85px;
 }
