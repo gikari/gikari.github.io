@@ -154,7 +154,7 @@ header > * {
 .logo {
 	width: 300px;
 	/* max-height: 200px; */
-	top: 10px;
+	top: 0px;
 	left: 150px;
 	right: 100px;
 }
