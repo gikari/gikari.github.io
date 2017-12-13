@@ -94,11 +94,11 @@ table {
 
 /* Unique styles */
 body {
-	background: linear-gradient(to left, #fdd900 50%,#000000 50%);
+	background: linear-gradient(to left, #b31410 50%,#000000 50%);
 }
 a {
 	text-decoration: none;
-	color: #fdd900;
+	color: #b31410;
 }
 
 a:hover {
