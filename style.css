@@ -223,7 +223,7 @@ footer {
 	max-height: 300px;
 	background-image: url("images/design/down.png");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top center;
 }
 .copy {
 	position: relative;
