@@ -219,10 +219,10 @@ main {
 	height: 385px;
 }
 footer {
-	height: 300px;
+	/* height: 300px; */
 	background-image: url("images/design/down.png");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: center, top;
 }
 .copy {
 	position: relative;
