@@ -5,65 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SLS JS CLOCK</title>
-  <!-- <link rel="stylesheet" href=""> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-  <style>
-    html,
-    body,
-    div,
-    span,
-    ul,
-    li {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
-    }
-
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-      display: block;
-    }
-
-    body {
-      line-height: 1;
-    }
-
-    ol,
-    ul {
-      list-style: none;
-    }
-
-    blockquote,
-    q {
-      quotes: none;
-    }
-
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-      content: '';
-      content: none;
-    }
-
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-  </style>
   <style>
     @font-face {
       font-family: 'DinCompPro-Med';
@@ -77,7 +19,11 @@
       font-style: normal;
     }
 
-    .wrapper {
+    body {
+      line-height: 1;
+    }
+
+    .clock-box {
       top: 4vh;
       right: 5vh;
       position: absolute;
@@ -86,29 +32,24 @@
       text-shadow: #000 1px 1px 5px;
       color: #fff;
       opacity: 0.7;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
     }
 
-    li {
-      display: inline;
-      float: left;
+    .clock-time {
+      display: flex;
+      justify-content: center;
     }
 
-    .colon {}
+    .clock-timezone {
+      font-size: 4vh;
+    }
   </style>
   <script src="js/luxon.min.js"></script>
   <script>
     $(document).ready(function () {
-      var DateTime = luxon.DateTime;
-
-      const getParams = window.location.search;
-      const params = new URLSearchParams(getParams);
-      const timezone = params.get('timezone');
-
-      (function blink() {
-        $('.colon').fadeOut(1500).fadeIn(1500, blink);
-      })();
-
-      setInterval(function () {
+      function setTime() {
         let now = timezone ? DateTime.now().setZone(timezone) : DateTime.now()
         let minutes = now.minute
         // Add a leading zero to the minutes value
@@ -117,18 +58,39 @@
         let hours = now.hour
         // Add a leading zero to the hours value
         $(".hours").html((hours < 10 ? "0" : "") + hours)
-      }, 1000);
+      }
+
+      var DateTime = luxon.DateTime;
+
+      const getParams = window.location.search;
+      const params = new URLSearchParams(getParams);
+      const timezone = params.get('timezone') || 'Europe/Berlin';
+
+      const city = timezone.split('/')[1]
+
+      // Set timezone city
+      $('.clock-timezone').html(city);
+
+      // Make the ':' symbol blink
+      (function blink() {
+        $('.colon').fadeOut(1500).fadeIn(1500, blink);
+      })();
+
+      // Update time
+      setTime()
+      setInterval(setTime, 1000);
     });
   </script>
 </head>
 
 <body>
-  <div class="wrapper">
-    <ul>
-      <li class="hours"></li>
-      <li class="colon">:</li>
-      <li class="min"></li>
-    </ul>
+  <div class="clock-box">
+    <span class="clock-time">
+      <span class="hours">00</span>
+      <span class="colon">:</span>
+      <span class="min">00</span>
+    </span>
+    <div class="clock-timezone">Königsberg</div>
   </div>
 </body>
 
